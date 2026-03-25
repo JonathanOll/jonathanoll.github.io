@@ -327,6 +327,7 @@ section {
 }
 
 .project-card {
+  cursor: pointer;
   display: flex;
   gap: 1rem;
   background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 55%),
