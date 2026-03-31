@@ -59,7 +59,7 @@ window.addEventListener("resize", resizeCanvas);
   const ctx = canvas.getContext("2d");
 
   let particles = [];
-  const particleCount = 200;
+  const particleCount = 300;
   const maxDistance = 150;
   const maxMouseDistance = 100;
 
@@ -148,8 +148,8 @@ window.addEventListener("resize", resizeCanvas);
       particles.forEach(p => {
         const dist = Math.hypot(p.x - mouse.x, p.y - mouse.y);
 
-        if (dist < maxDistance) {
-          ctx.strokeStyle = "rgba(0,150,255,0.8)";
+        if (dist < maxMouseDistance) {
+          ctx.strokeStyle = `rgba(0,150,255,${(maxDistance - dist/2) / (maxDistance)})`;
           ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
