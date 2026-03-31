@@ -5,7 +5,10 @@
   <title>Jonathan Ollivier - Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="style.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="/media/avatar.png">
+
+  <link rel="icon" href="media/avatar.ico">
+  <link rel="icon" type="image/png" href="media/avatar.png">
+  <link rel="apple-touch-icon" href="media/avatar.png">
 </head>
 <body>
 
@@ -25,6 +28,7 @@
 </header>
 
 <main>
+  <canvas id="particles" width="1920" height="1080"></canvas>
   <div class="left-column">
     <!-- Présentation -->
     <section id="presentation">
@@ -46,6 +50,13 @@
           <p class="hero-subtitle">
             Au cours de mon cursus ainsi qu'à travers mes expériences personnelles, j'ai pu toucher à beaucoup de domaines du développement, mes domaines de prédilection sont le jeu vidéo, le web, ainsi que le mobile.
           </p>
+          <p class="hero-subtitle">
+            En dehors du travail, je suis passionné de sciences en général, et plus particulièrement d'informatique et de mathématiques. J'apprécie également énormément tous les types de jeux (vidéos, de société, ...), qui nourrissent ma créativité et mon sens de la logique. 
+          </p>
+          <p class="hero-subtitle">
+            Plus largement, je suis un éternel curieux : j'aime découvrir de nouveaux domaines et explorer la culture sous toutes ses formes. Globalement, j'apprécie l'idée que n'importe quel sujet peut devenir passionant dès lors qu'on prend le temps de s'y plonger.
+          </p>
+
           <div class="hero-actions">
             <a href="#projets" class="btn-primary">Voir mes projets</a>
             <a href="#competences" class="btn-ghost">Mes compétences</a>
@@ -90,6 +101,7 @@
         <span class="contact-value">Oyonnax, France</span>
       </div>
     </div>
+
   </aside>
   
   <section id="parcours">
@@ -152,6 +164,83 @@
         <div class="section-line"></div>
       </div>
       <div class="projects-grid">
+        <article class="project-card">
+          <div class="slider">
+            <div class="slides">
+                <img src="media/snoozespot-1.jpg" alt="Image 1">
+                <img src="media/snoozespot-2.jpg" alt="Image 2">
+                <img src="media/snoozespot-3.jpg" alt="Image 3">
+                <img src="media/snoozespot-4.jpg" alt="Image 4">
+                <img src="media/snoozespot-5.jpg" alt="Image 5">
+                <img src="media/snoozespot-6.jpg" alt="Image 6">
+            </div>
+
+            <button class="slider-btn prev">‹</button>
+            <button class="slider-btn next">›</button>
+
+            <div class="dots"></div>
+          </div>
+          <div onclick="window.open('https://github.com/JonathanOll/SnoozeSpot','_blank');">
+              <h3 class="project-title">SnoozeSpot</h3>
+              <p class="project-meta">Application mobile</p>
+              <p class="project-desc">
+                SnoozeSpot est une appli de partage de lieu de sieste, permettant à des utilisateurs d'échanger dans un feed similaire au fonctionnement de twitter, mais également de poster des lieux de sieste sur une carte que les autres utilisateurs pourront commenter.
+              </p>
+              <p class="project-desc">
+                L'application est écrite en Kotlin, en utilisant la syntaxe Compose. Retrofit est utilisé pour toute la partie appel à l'API, et une base de données Room est présente pour stocker des données en local (surtout utilisé pour du cache).
+              </p>
+              <p class="project-desc">
+                Pour la partie appel à l'API, retrofit requiert normalement l'écriture d'un interface kotlin déclarant chaque route avec les types de données en entrée et en sortie. Cette partie étant peu intéressante et très répétitive, elle est automatique sur SnoozeSpot. Une documentation yaml de l'api est générée automatiquement via IntelliJ, et l'app va chercher cette documentation pour générer les data class et les interfaces Retrofit nécessaires.
+              </p>
+              <p class="project-desc">
+                Une CI est également en place. Lorsqu'une PR est merge sur git, on lance le déploiement de l'API, ainsi que la compilation de l'application et la mise à disposition d'un lien de téléchargement.
+              </p>
+              <p class="project-desc">
+                Ce projet est probablement celui sur lequel j'ai le plus appris, étant donné qu'il était le premier projet dans lequel j'ai poussé le développement de la création des maquettes de l'application au déploiement en production tout en assurant un suivi de projet rigoureux et appliqué.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Kotlin</span>
+                <span class="project-tag">Compose</span>
+                <span class="project-tag">Android</span>
+                <span class="project-tag">CI/CD</span>
+                <span class="project-tag">Mobile</span>
+                <span class="project-tag">Room</span>
+                <span class="project-tag">Ktor</span>
+                <span class="project-tag">API REST</span>
+                <span class="project-tag">Trello</span>
+                <span class="project-tag">Gestion de projet</span>
+              </div>
+          </div>
+        </article>
+
+        <article class="project-card" onclick="window.open('https://www.n2f.com/','_blank');">
+          <video class="project-media" src="media/n2f.mp4" autoplay muted loop></video>
+          <div>
+              <h3 class="project-title">N2F</h3>
+              <p class="project-meta">Application Web</p>
+              <p class="project-desc">
+                Au cours de mon année d'alternance, j'ai été amené à developper de l'outillage interne pour l'administration d'une plateforme de gestion de notes de frais.
+              </p>
+              <p class="project-desc">
+                Mon parcours s'est déroulé au sein d'une équipe composée d'une cinquantaine de développeurs, ce qui requiert une gestion de projet irréprochable (Reviews sur Github, méthodes agiles, Sprint planning, Sprint review, ...).
+              </p>
+              <p class="project-desc">
+                Au cours de cette année, j'ai pu développer mes compétences en développement web, mais également en communication et en travail d'équipe. Cette première expérience dans le monde professionnel a été une grande source d'apprentissage aussi bien techniquement qu'humainement
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Angular.js</span>
+                <span class="project-tag">Angular</span>
+                <span class="project-tag">C#</span>
+                <span class="project-tag">ASP.NET</span>
+                <span class="project-tag">EntityFramework</span>
+                <span class="project-tag">SQL Server</span>
+                <span class="project-tag">PostgreSQL</span>
+                <span class="project-tag">Travail en équipe</span>
+                <span class="project-tag">Méthodes agiles</span>
+              </div>
+          </div>
+        </article>
+
         <article class="project-card" onclick="window.open('https://github.com/JonathanOll/Tetris-AI-V2','_blank');">
           <video class="project-media" src="media/tetris-ai.mp4" autoplay muted loop></video>
           <div>
@@ -162,6 +251,9 @@
               </p>
               <p class="project-desc">
                 À la première génération, les IA sont plutôt mauvaises, mais l'algorithme génétique leur permet d'optimiser leurs paramètres, et de sélectionner les meilleurs individus à chaque génération pour se reproduire.
+              </p>
+              <p class="project-desc">
+                Ce projet m'a permis d'acquérir des premières bases en intelligence artificielle, ainsi qu'en exploitation de données (génération du graphe d'évolution des performances).
               </p>
               <div class="project-tags">
                 <span class="project-tag">Python</span>
@@ -191,6 +283,9 @@
               <p class="project-desc">
                 le cycle continue jusqu'à l'éradication de toutes les autres équipes par les vainqueurs.
               </p>
+              <p class="project-desc">
+                Le développement de ce projet m'a permis d'obtenir des compétences en génération de contenu vidéo, ainsi qu'en optimisation (afin d'éviter que la génération d'une vidéo prenne trop longtemps)
+              </p>
               <div class="project-tags">
                 <span class="project-tag">Python</span>
                 <span class="project-tag">Pygame</span>
@@ -200,49 +295,7 @@
           </div>
         </article>
         
-        <article class="project-card" onclick="window.open('https://github.com/JonathanOll/SnoozeSpot','_blank');">
-          <div class="slider">
-            <div class="slides">
-                <img src="media/snoozespot-1.jpg" alt="Image 1">
-                <img src="media/snoozespot-2.jpg" alt="Image 2">
-                <img src="media/snoozespot-3.jpg" alt="Image 3">
-                <img src="media/snoozespot-4.jpg" alt="Image 4">
-                <img src="media/snoozespot-5.jpg" alt="Image 5">
-                <img src="media/snoozespot-6.jpg" alt="Image 6">
-            </div>
-
-            <button class="slider-btn prev">‹</button>
-            <button class="slider-btn next">›</button>
-
-            <div class="dots"></div>
-          </div>
-          <div>
-              <h3 class="project-title">SnoozeSpot</h3>
-              <p class="project-meta">Application mobile</p>
-              <p class="project-desc">
-                SnoozeSpot est une appli de partage de lieu de sieste, permettant à des utilisateurs d'échanger dans un feed similaire au fonctionnement de twitter, mais également de poster des lieux de sieste sur une carte que les autres utilisateurs pourront commenter.
-              </p>
-              <p class="project-desc">
-                L'application est écrite en Kotlin, en utilisant la syntaxe Compose. Retrofit est utilisé pour toute la partie appel à l'API, et une base de données Room est présente pour stocker des données en local (surtout utilisé pour du cache).
-              </p>
-              <p class="project-desc">
-                Pour la partie appel à l'API, retrofit requiert normalement l'écriture d'un interface kotlin déclarant chaque route avec les types de données en entrée et en sortie. Cette partie étant peu intéressante et très répétitive, elle est automatique sur SnoozeSpot. Une documentation yaml de l'api est générée automatiquement via IntelliJ, et l'app va chercher cette documentation pour générer les data class et les interfaces Retrofit nécessaires.
-              </p>
-              <p class="project-desc">
-                Une CI est également en place. Lorsqu'une PR est merge sur git, on lance le déploiement de l'API, ainsi que la compilation de l'application et la mise à disposition d'un lien de téléchargement.
-              </p>
-              <div class="project-tags">
-                <span class="project-tag">Kotlin</span>
-                <span class="project-tag">Compose</span>
-                <span class="project-tag">Android</span>
-                <span class="project-tag">CI/CD</span>
-                <span class="project-tag">Mobile</span>
-                <span class="project-tag">Room</span>
-              </div>
-          </div>
-        </article>
-        
-        <article class="project-card" onclick="window.open('https://github.com/JonathanOll?tab=repositories','_blank');">
+        <article class="project-card">
           <div class="slider" style="height: 200px">
             <div class="slides">
                 <img src="media/other-1.png" alt="Image 1">
@@ -256,7 +309,7 @@
 
             <div class="dots"></div>
           </div>
-          <div>
+          <div onclick="window.open('https://github.com/JonathanOll?tab=repositories','_blank');">
               <h3 class="project-title">Et beaucoup d'autres...</h3>
               <p class="project-meta">IA, Rendu Graphique, Jeux, Web...</p>
               <p class="project-desc">
@@ -309,6 +362,19 @@
               </div>
             </div>
             <div>
+              <h3 class="skill-group-title">Base de données</h3>
+              <div class="skill-chips">
+                <span class="skill-chip">MySQL</span>
+                <span class="skill-chip">SQL Server</span>
+                <span class="skill-chip">PostgreSQL</span>
+                <span class="skill-chip">MariaDB</span>
+                <span class="skill-chip">SQLite</span>
+                <span class="skill-chip">Neo4j</span>
+                <span class="skill-chip">Firebase</span>
+                <span class="skill-chip">MongoDB</span>
+              </div>
+            </div>
+            <div>
               <h3 class="skill-group-title">Outils</h3>
               <div class="skill-chips">
                 <span class="skill-chip">Git</span>
@@ -316,11 +382,13 @@
                 <span class="skill-chip">Figma</span>
                 <span class="skill-chip">Visual Studio</span>
                 <span class="skill-chip">Visual Studio Code</span>
+                <span class="skill-chip">Suite Jetbrains</span>
                 <span class="skill-chip">Trello</span>
                 <span class="skill-chip">Figma</span>
                 <span class="skill-chip">Bitrise</span>
                 <span class="skill-chip">Render</span>
                 <span class="skill-chip">OpenAPI</span>
+                <span class="skill-chip">Docker</span>
               </div>
             </div>
             <h3 class="skill-group-title" style="margin-bottom: -0.6rem;">Web</h3>
@@ -359,7 +427,7 @@
                 <span class="skill-chip">Motivation</span>
                 <span class="skill-chip">Communication</span>
                 <span class="skill-chip">Gestion du temps</span>
-                <span class="skill-chip">Résolutions de problèmes</span>
+                <span class="skill-chip">Résolution de problèmes</span>
                 <span class="skill-chip">Curiosité</span>
                 <span class="skill-chip">Autonomie</span>
               </div>

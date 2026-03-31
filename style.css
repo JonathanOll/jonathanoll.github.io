@@ -39,6 +39,10 @@ header {
   border-bottom: 1px solid rgba(148, 163, 184, 0.15);
 }
 
+.header {
+  width: 100%;
+  display: flex;
+}
 
 .nav {
   max-width: 1100px;
@@ -329,9 +333,9 @@ section {
 .project-card {
   cursor: pointer;
   display: flex;
+  align-items: center;
   gap: 1rem;
-  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 55%),
-              #020617;
+  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 55%),#020617;
   border-radius: var(--radius);
   border: 1px solid rgba(30, 64, 175, 0.7);
   padding: 1.1rem 1.2rem;
@@ -408,6 +412,12 @@ ul.project-desc {
   color: var(--muted);
 }
 
+
+.project-tag:hover {
+  border-color: rgba(78, 119, 177, 1);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
 /* Compétences */
 
 @media (max-width: 700px) {
@@ -452,6 +462,12 @@ ul.project-desc {
   background: rgba(15, 23, 42, 0.9);
   border: 1px solid rgba(148, 163, 184, 0.6);
   color: var(--text);
+  transition: 0.3s;
+}
+
+.skill-chip:hover {
+  border-color: rgba(78, 119, 177, 1);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .skills-levels {
@@ -503,7 +519,7 @@ ul.project-desc {
   gap: 1.5rem;
 }
 
-.profile-card {
+.profile-card, .particles-card {
   background: radial-gradient(circle at top, rgba(56, 189, 248, 0.18), transparent 55%),
               #020617;
   border-radius: 20px;
@@ -513,6 +529,16 @@ ul.project-desc {
   text-align: center;
   position: relative;
   overflow: hidden;
+}
+
+#particles {
+  position: absolute;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 105vh;
 }
 
 .profile-avatar {
@@ -584,6 +610,7 @@ ul.project-desc {
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.95);
   font-size: 0.9rem;
   color: var(--muted);
+  z-index: 1;
 }
 
 .contact-row {
